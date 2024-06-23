@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: var(--paragraph-font);
+    font-family: var(--paragraph-font), serif;
     margin: 0 auto;
     max-width: 960px;
     display: grid;
@@ -53,7 +53,7 @@ nav ul li a {
     text-decoration: none;
     color: var(--nav-link-color);
     font-size: 1rem;
-    font-family: var(--paragraph-font);
+    font-family: var(--paragraph-font), serif;
     font-weight: 700;
 }
 
@@ -141,7 +141,7 @@ figcaption {
 }
 
 p {
-    font-family: var(--paragraph-font);
+    font-family: var(--paragraph-font), serif;
 }
 
 
