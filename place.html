@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Mc Monde Meliton">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals Course week03 - Assignment about Place.">
+    <title>WDD 131 week03 assignment- Place - Philippines </title>
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Philippines</h1>
+</header>
+<main>
+    <div class="hero">
+        <picture>
+            <source media="(min-width: 1000px)" srcset="images/philippine-eagle-in-davao-landscape-large.webp">
+            <source media="(min-width: 500px)" srcset="images/philippine-eagle-portrait-mobile.webp">
+            <img src="images/philippine-eagle-portrait-mobile.webp" alt="African Deer in Nigeria" width="681" height="1023">
+        </picture>
+    </div>
+    <section class="country">
+        <h2>Data</h2>
+        <div class="key">
+            <p class="label">Area: </p>
+            <p class="label">Population: </p>
+            <p class="label">Capital: </p>
+            <p class="label">Languages: </p>
+            <p class="label">Currency: </p>
+            <p class="label">Time Zone: </p>
+            <p class="label">Calling Code: </p>
+            <p class="label">Internet TLD: </p>
+        </div>
+        <div class="values">
+            <p>300,000 sq km</p>
+            <p>113 million</p>
+            <p>Manila</p>
+            <p>Filipino, English</p>
+            <p>Philippine Peso (₱)</p>
+            <p>UTC+08:00</p>
+            <p>+63</p>
+            <p>.ph</p>
+        </div>
+    </section>
+    <section class="weather">
+        <div class="weather-heading">
+            <h2 class="wx-icon-heading">Weather </h2>
+            <img class="weather-icon" src="images/sunny-cloudy.svg" alt="Weather icon for the country">
+        </div>
+        <div class="key">
+            <p class="label"> Temperature: </p>
+            <p class="label"> Conditions: </p>
+            <p class="label"> Wind: </p>
+            <p class="label"> Wind Chill: </p>
+        </div>
+        <div class="values">
+            <p id="temperature">29 °C</p>
+            <p id="conditions">Sunny, Cloudy</p>
+            <p id="windSpeed">3 km/h</p>
+            <p id="windChillFactor">N/A</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>© <span id="currentYear">year here</span> Mc Monde Meliton, Philippines</p>
+    <p>Last Modification: <span id="lastModified">last modified here</span></p>
+</footer>
+</body>
+</html>

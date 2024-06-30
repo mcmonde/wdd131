@@ -1,0 +1,70 @@
+@media screen and (min-width: 640px) {
+    header {
+        background-color: var(--primary-color);
+        padding: 2rem;
+    }
+
+    h2 {
+        background-color: rgba(105, 45, 26, 0.9);
+        padding: 1rem 0;
+        color: rgb(255, 255, 255);
+        position: relative;
+        left: -16px;
+    }
+
+    main {
+        position: relative;
+    }
+
+    .country {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .weather {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+    }
+
+    section {
+        background-color: rgba(255, 255, 255, 0.23);
+    }
+
+    section p .label {
+        text-align: right;
+    }
+
+    .weather-heading {
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wx-icon-heading {
+        grid-column: 1 / 2;
+        width: 100%;
+    }
+
+    .wx-icon-heading::after {
+        content: '🌤️';
+    }
+
+    .weather-icon {
+        display: none;
+    }
+
+    picture {
+        height: 100vh;
+    }
+
+    .country,
+    .weather {
+        width: 350px;
+    }
+}
