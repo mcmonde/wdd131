@@ -110,6 +110,23 @@ const temples = [
         imageUrl:
             "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/durban-south-africa/800x500/1-8b3f1b895a7c92ee66c2d0c7e78606f75f0d0cc8.jpg",
     },
+    {
+        templeName: "Philippines Manila Temple",
+        location: "Metro, Manila",
+        dedicated: "1982, August, 25",
+        area: 26683,
+        imageUrl:
+            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manila-philippines/400x250/manila-philippines-temple-lds-129585-wallpaper.jpg",
+    },
+    {
+        templeName: "Philippines Cebu Temple",
+        location: "Metro, Manila",
+        dedicated: "1982, August, 25",
+        area: 26683,
+        imageUrl:
+            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manila-philippines/400x250/manila-philippines-temple-lds-129585-wallpaper.jpg",
+    },
+
 ];
 
 function filterOldTemples() {
