@@ -110,11 +110,11 @@ main .second img {
 }
 
 #menu::before {
-    content: "☰";
+    content: "✖";
 }
 
 #menu.open::before {
-    content: "X";
+    content: "☰";
 }
 
 .open a {
