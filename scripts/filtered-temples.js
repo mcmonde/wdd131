@@ -111,7 +111,7 @@ const temples = [
             "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/durban-south-africa/800x500/1-8b3f1b895a7c92ee66c2d0c7e78606f75f0d0cc8.jpg",
     },
     {
-        templeName: "Philippines Manila Temple",
+        templeName: "Manila Philippines Temple",
         location: "Metro, Manila",
         dedicated: "1982, August, 25",
         area: 26683,
@@ -119,14 +119,21 @@ const temples = [
             "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manila-philippines/400x250/manila-philippines-temple-lds-129585-wallpaper.jpg",
     },
     {
-        templeName: "Philippines Cebu Temple",
-        location: "Metro, Manila",
-        dedicated: "1982, August, 25",
-        area: 26683,
+        templeName: "Cebu City Philippines Temple",
+        location: "Cebu City, Cebu",
+        dedicated: "2007, November, 14",
+        area: 29556,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manila-philippines/400x250/manila-philippines-temple-lds-129585-wallpaper.jpg",
+            "https://churchofjesuschristtemples.org/assets/img/temples/_temp/133-Cebu-City-Philippines-Temple.jpg",
     },
-
+    {
+        templeName: "Urdaneta Philippines Temple",
+        location: "Urdaneta, Pangasinan",
+        dedicated: "2019, January, 16",
+        area: 32604,
+        imageUrl:
+            "https://churchofjesuschristtemples.org/assets/img/temples/urdaneta-philippines-temple/urdaneta-philippines-temple-45856-thumb.jpg",
+    },
 ];
 
 function filterOldTemples() {
