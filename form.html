@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DYNAMIC FORM</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals Course week05 html forms assignment">
+    <meta name="author" content="Mc Monde Meliton">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Font Embed Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer=""></script>
+</head>
+<body>
+<header>
+    <h1>Product Review</h1>
+</header>
+<main>
+    <form action="review.html" method="get" class="prod-form">
+        <label> Product Name*<select name="products" id="products" required>
+            <option id="first-option" value="" disabled selected>Select a Product ...</option>
+        </select></label>
+        <label class="container">Overall Rating*</label>
+        <div class="container">
+            <label>&star;<input type="radio" name="rating" id="rad-one" required></label>
+            <label>&star;&star;<input type="radio" name="rating" id="rad-two" required></label>
+            <label>&star;&star;&star;<input type="radio" name="rating" id="rad-three" required></label>
+            <label>&star;&star;&star;&star;<input type="radio" name="rating" id="rad-four" required></label>
+            <label>&star;&star;&star;&star;&star;<input type="radio" name="rating" id="rad-five" required></label>
+        </div>
+        <label>Date of Installation*<input type="date" name="install" id="dateInstall" required></label>
+        <label>Which features did you find useful in the product? (Check all that apply)</label>
+        <label><input type="checkbox" id="check-one">Durability</label>
+        <label><input type="checkbox" id="check-two">Ease of Use</label>
+        <label><input type="checkbox" id="check-three">Performance</label>
+        <label><input type="checkbox" id="check-four">Design</label>
+        <label>Written Review (Optional)<textarea name="review" id="review" rows="8"></textarea></label>
+        <label>Your Name (Optional)<input type="text" name="name" id="name"></label>
+        <input type="submit" value="Post Review">
+    </form>
+</main>
+<footer>
+    <p>© <span id="currentyear"></span> Mc Monde Meliton, Philippines</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+</footer>
+</body>
+</html>
