@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DYNAMIC FORM</title>
     <meta name="description" content="WDD 131 - Dynamic Web Fundamentals Course week05 html forms assignment">
@@ -15,33 +14,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <!-- Link to your CSS file -->
     <link rel="stylesheet" href="styles/form.css">
-    <script src="scripts/form.js" defer=""></script>
+    <script src="scripts/form.js" defer></script>
 </head>
 <body>
 <header>
     <h1>Product Review</h1>
 </header>
 <main>
-    <form action="review.html" method="get" class="prod-form">
-        <label> Product Name*<select name="products" id="products" required>
-            <option id="first-option" value="" disabled selected>Select a Product ...</option>
-        </select></label>
-        <label class="container">Overall Rating*</label>
-        <div class="container">
-            <label>&star;<input type="radio" name="rating" id="rad-one" required></label>
-            <label>&star;&star;<input type="radio" name="rating" id="rad-two" required></label>
-            <label>&star;&star;&star;<input type="radio" name="rating" id="rad-three" required></label>
-            <label>&star;&star;&star;&star;<input type="radio" name="rating" id="rad-four" required></label>
-            <label>&star;&star;&star;&star;&star;<input type="radio" name="rating" id="rad-five" required></label>
+    <form action="review.html" method="get" class="form-container">
+        <label>
+            Product Name
+            <span class="red-asterisk">*</span>
+            <select name="products" id="products" required>
+                <option id="first-option" value="" disabled selected>Select a Product ...</option>
+            </select>
+        </label>
+        <label>
+            Overall Rating
+            <span class="red-asterisk">*</span>
+        </label>
+        <div class="stars-wrapper">
+            <div class="stars">
+                <input type="radio" id="five-star" name="stars" value="5" required><label for="five-star"></label>
+                <input type="radio" id="four-star" name="stars" value="4" required><label for="four-star"></label>
+                <input type="radio" id="three-star" name="stars" value="3" required><label for="three-star"></label>
+                <input type="radio" id="two-star" name="stars" value="2" required><label for="two-star"></label>
+                <input type="radio" id="one-star" name="stars" value="1" required><label for="one-star"></label>
+            </div>
         </div>
-        <label>Date of Installation*<input type="date" name="install" id="dateInstall" required></label>
+        <div id="star-error" class="error-message"></div>
+        <label>
+            Date of Installation
+            <span class="red-asterisk">*</span>
+            <input type="date" name="install" id="installed" required>
+        </label>
         <label>Which features did you find useful in the product? (Check all that apply)</label>
-        <label><input type="checkbox" id="check-one">Durability</label>
-        <label><input type="checkbox" id="check-two">Ease of Use</label>
-        <label><input type="checkbox" id="check-three">Performance</label>
-        <label><input type="checkbox" id="check-four">Design</label>
-        <label>Written Review (Optional)<textarea name="review" id="review" rows="8"></textarea></label>
-        <label>Your Name (Optional)<input type="text" name="name" id="name"></label>
+        <label>
+            <input type="checkbox" id="check-one">Durability
+        </label>
+        <label>
+            <input type="checkbox" id="check-two">Ease of Use
+        </label>
+        <label>
+            <input type="checkbox" id="check-three">Performance
+        </label>
+        <label>
+            <input type="checkbox" id="check-four">Design
+        </label>
+        <label>Written Review <span class="optional">(Optional)</span>
+            <textarea name="review" id="review" rows="8"></textarea>
+        </label>
+        <label>Your Name <span class="optional">(Optional)</span>
+            <input type="text" name="name" id="name">
+        </label>
         <input type="submit" value="Post Review">
     </form>
 </main>
