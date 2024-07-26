@@ -1,16 +1,18 @@
-const dateModified = new Date(document.lastModified);
-document.querySelector("#lastModified").innerHTML = dateModified;
+document.addEventListener('DOMContentLoaded', () => {
 
-const visits = document.querySelector(".numberOfTimes");
+    const dateModified = new Date(document.lastModified);
+    const formattedDate = dateModified;
+    document.querySelector("#lastModified").textContent = `Last Modified: ${formattedDate}`;
 
-let numberOfVisits = Number(window.localStorage.getItem("visit-times")) || 0;
+    const visitsElement = document.querySelector(".numberOfTimes");
+    let numberOfVisits = Number(localStorage.getItem("visit-times")) || 0;
 
-if (numberOfVisits !== 0) {
-    visits.textContent = `You have visited this site: ${numberOfVisits} times`;
-} else {
-    visits.textContent = `This is your first visit. 🥳 Welcome!`;
-}
+    if (numberOfVisits > 0) {
+        visitsElement.textContent = `You have visited this site ${numberOfVisits} times.`;
+    } else {
+        visitsElement.textContent = `This is your first visit. Welcome!`;
+    }
 
-numberOfVisits++;
-
-localStorage.setItem("visit-times", numberOfVisits);
+    numberOfVisits++;
+    localStorage.setItem("visit-times", numberOfVisits);
+});

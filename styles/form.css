@@ -147,3 +147,16 @@ input[type="submit"]:active {
     cursor: pointer;
     display: inline-block; /* Makes sure labels are inline-block for correct spacing */
 }
+.acknowledgement-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+.comment {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
