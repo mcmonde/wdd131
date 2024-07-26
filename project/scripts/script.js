@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update current year and last modified date
     currentYear.textContent = new Date().getFullYear();
-    lastModifiedDate.textContent = new Date(document.lastModified).toLocaleString();
+    lastModifiedDate.textContent = new Date(document.lastModified);
 
     // Destinations data
     const destinations = [
