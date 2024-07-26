@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Update the current year and last modified date
     const currentYear = document.querySelector("#currentyear");
     const year = new Date().getFullYear();
     currentYear.innerHTML = year;
@@ -7,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const lastModifiedDate = document.querySelector("#lastModified");
     lastModifiedDate.innerHTML = new Date(document.lastModified);
 
-    // Populate the product dropdown
     const select = document.querySelector("#products");
     const products = [
         { id: "fc-1888", name: "flux capacitor", averagerating: 4.5 },
@@ -25,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         select.appendChild(option);
     }
 
-    // Form validation for star rating
+    // Form validation for star rating still not working at this moment.
     const form = document.querySelector('.form-container');
     if (form) {
         const stars = form.querySelectorAll('input[name="stars"]');
@@ -43,9 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isValid) {
                 event.preventDefault();
                 starError.textContent = 'Please select a star rating.';
+                console.log('No star selected.')
             }
-
-            console.log('Stars:', stars);
         });
     } else {
         console.error('Form element not found.');
