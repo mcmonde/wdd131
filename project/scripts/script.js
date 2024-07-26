@@ -83,10 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     ];
 
-    const destinationContainer = document.getElementById('destinationContainer');
+    const destinationSelect = document.getElementById('destination');
     const destinationTypeFilter = document.getElementById('destinationType');
+    const destinationContainer = document.getElementById('destinationContainer');
 
-    // Create destination card
+    // Function to create a destination card
     function createDestinationCard(destination) {
         return `
             <div class="destination-card">
@@ -100,29 +101,40 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // Display destinations
-    function displayDestinations() {
-        const selectedType = destinationTypeFilter.value;
-        const filteredDestinations = selectedType === 'all'
-            ? destinations
-            : destinations.filter(destination => destination.type === selectedType);
-        destinationContainer.innerHTML = filteredDestinations.map(createDestinationCard).join('');
+    // Populate destination dropdown
+    if (destinationSelect) {
+        destinations.forEach(destination => {
+            const option = document.createElement('option');
+            option.value = destination.name;
+            option.textContent = destination.name;
+            destinationSelect.appendChild(option);
+        });
     }
 
-    // Initial display
-    displayDestinations();
-
-    // Filter change event
-    destinationTypeFilter.addEventListener('change', displayDestinations);
+    // Display destinations
+    function displayDestinations() {
+        if (destinationTypeFilter) {
+            const selectedType = destinationTypeFilter.value;
+            const filteredDestinations = selectedType === 'all'
+                ? destinations
+                : destinations.filter(destination => destination.type === selectedType);
+            if (destinationContainer) {
+                destinationContainer.innerHTML = filteredDestinations.map(createDestinationCard).join('');
+            }
+        }
+    }
 
     // Initialize carousel
     function initializeCarousel() {
-        carouselInner.innerHTML = destinations.map(destination => `
-            <div class="carousel-item">
-                <img src="${destination.imageUrl}" alt="${destination.name}">
-            </div>
-        `).join('');
-        updateCarousel();
+        const carouselInner = document.querySelector('.carousel-inner');
+        if (carouselInner) {
+            carouselInner.innerHTML = destinations.map(destination => `
+                <div class="carousel-item">
+                    <img src="${destination.imageUrl}" alt="${destination.name}">
+                </div>
+            `).join('');
+            updateCarousel();
+        }
     }
 
     // Update carousel display
@@ -137,28 +149,52 @@ document.addEventListener('DOMContentLoaded', function() {
         if (slideIndex < 0) slideIndex = totalSlides - 1;
 
         const offset = -slideIndex * 100;
-        carouselInner.style.transform = `translateX(${offset}%)`;
+        const carouselInner = document.querySelector('.carousel-inner');
+        if (carouselInner) {
+            carouselInner.style.transform = `translateX(${offset}%)`;
+        }
     }
 
     // Carousel controls
-    prevSlide.addEventListener('click', function() {
-        slideIndex--;
-        updateCarousel();
-    });
+    const prevSlide = document.querySelector('.prev-slide');
+    const nextSlide = document.querySelector('.next-slide');
 
-    nextSlide.addEventListener('click', function() {
-        slideIndex++;
-        updateCarousel();
-    });
+    if (prevSlide) {
+        prevSlide.addEventListener('click', function() {
+            slideIndex--;
+            updateCarousel();
+        });
+    }
 
-    // Initial display
+    if (nextSlide) {
+        nextSlide.addEventListener('click', function() {
+            slideIndex++;
+            updateCarousel();
+        });
+    }
+
+    // Initial display and setup
     displayDestinations();
     initializeCarousel();
 
-    // Filter change event
-    destinationTypeFilter.addEventListener('change', function() {
-        destinationTypeFilter.classList.add('option-highlight');
-        setTimeout(() => destinationTypeFilter.classList.remove('option-highlight'), 300);
-        displayDestinations();
-    });
+    // Additional logic for filter highlight and other features
+    if (destinationTypeFilter) {
+        destinationTypeFilter.addEventListener('change', function() {
+            destinationTypeFilter.classList.add('option-highlight');
+            setTimeout(() => destinationTypeFilter.classList.remove('option-highlight'), 300);
+            displayDestinations();
+        });
+    }
+
+    const visitsElement = document.querySelector(".numberOfTimes");
+    let numberOfVisits = Number(localStorage.getItem("visit-times")) || 0;
+
+    if (numberOfVisits > 0) {
+        visitsElement.textContent = `You have visited this site ${numberOfVisits} times.`;
+    } else {
+        visitsElement.textContent = `This is your first visit. Welcome!`;
+    }
+
+    numberOfVisits++;
+    localStorage.setItem("visit-times", numberOfVisits);
 });
